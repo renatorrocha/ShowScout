@@ -1,21 +1,40 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { RiSpotifyFill } from "react-icons/ri";
+import AuthBtn from "~/components/auth-btn";
+import { AuroraBackground } from "~/components/ui/aurora-background";
 
 export default function Home() {
-  const { data: session } = useSession();
-  const router = useRouter();
-
-  if (session) router.push("/dashboard");
-
   return (
-    <main>
-      HomePage
-      <div className="flex w-full gap-4">
-        <button onClick={() => signIn("spotify")}>Login</button>
-      </div>
-      <button onClick={() => console.log(session)}>See the data</button>
-    </main>
+    <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col items-center justify-center gap-4 px-4"
+      >
+        <p className="text-primary text-center text-3xl font-bold md:text-7xl">
+          Your Personal Show Tracker
+        </p>
+
+        <p className="text-text-dark py-4 text-center text-lg font-light md:text-3xl">
+          Discover upcoming shows from your favorite Spotify artists, <br /> all
+          in one place.
+        </p>
+
+        <AuthBtn
+          authType="sign-in"
+          className=" flex h-fit w-[300px] items-center gap-3 rounded-2xl"
+        >
+          <RiSpotifyFill className="size-6 md:size-8" />
+          <p className="text-lg font-semibold md:text-3xl">Find Gigs</p>
+        </AuthBtn>
+      </motion.div>
+    </AuroraBackground>
   );
 }
