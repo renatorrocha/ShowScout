@@ -1,18 +1,31 @@
-"use client";
+import { LogOut } from "lucide-react";
+import { redirect } from "next/navigation";
+import AuthBtn from "~/components/auth-btn";
+import { getFollowedArtists } from "~/lib/actions/spotfiy.actions";
+import { getServerAuthSession } from "~/server/auth";
 
-import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+export default async function Dashboard() {
+  const session = await getServerAuthSession();
 
-export default function Dashboard() {
-  const { data: session } = useSession();
-  const router = useRouter();
+  if (!session) return redirect("/");
 
-  if (!session) router.push("/");
+  const res = await getFollowedArtists(session.accessToken);
+
+  console.log(res);
+
+  console.log(session.accessToken);
 
   return (
     <div>
       Dashboard
-      <button onClick={() => signOut()}>Sign-Out</button>
+      <AuthBtn
+        authType="sign-out"
+        className="flex h-fit items-center gap-3 rounded-2xl"
+        variant={"destructive"}
+      >
+        <LogOut className="size-6 md:size-8" />
+        <p className="text-lg font-semibold md:text-3xl">Sign-out</p>
+      </AuthBtn>
     </div>
   );
 }

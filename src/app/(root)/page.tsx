@@ -1,11 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { RiSpotifyFill } from "react-icons/ri";
 import AuthBtn from "~/components/auth-btn";
 import { AuroraBackground } from "~/components/ui/aurora-background";
 
 export default function Home() {
+  const { data: session } = useSession();
+  const route = useRouter();
+
+  if (session) route.push("/dashboard");
   return (
     <AuroraBackground>
       <motion.div
@@ -29,7 +35,7 @@ export default function Home() {
 
         <AuthBtn
           authType="sign-in"
-          className=" flex h-fit w-[300px] items-center gap-3 rounded-2xl"
+          className="flex h-fit w-[300px] items-center gap-3 rounded-2xl"
         >
           <RiSpotifyFill className="size-6 md:size-8" />
           <p className="text-lg font-semibold md:text-3xl">Find Gigs</p>
