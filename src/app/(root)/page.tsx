@@ -1,17 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { RiSpotifyFill } from "react-icons/ri";
 import AuthBtn from "~/components/auth-btn";
 import { AuroraBackground } from "~/components/ui/aurora-background";
 
 export default function Home() {
-  const { data: session } = useSession();
-  const route = useRouter();
-
-  if (session) route.push("/dashboard");
   return (
     <AuroraBackground>
       <motion.div
@@ -24,11 +18,11 @@ export default function Home() {
         }}
         className="relative flex flex-col items-center justify-center gap-4 px-4"
       >
-        <p className="text-primary text-center text-3xl font-bold md:text-7xl">
+        <p className="text-center text-3xl font-bold text-primary md:text-7xl">
           Your Personal Show Tracker
         </p>
 
-        <p className="text-text-dark py-4 text-center text-lg font-light md:text-3xl">
+        <p className="py-4 text-center text-lg font-light text-text-dark md:text-3xl">
           Discover upcoming shows from your favorite Spotify artists, <br /> all
           in one place.
         </p>
