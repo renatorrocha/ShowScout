@@ -1,4 +1,4 @@
-declare type Artists = {
+declare type Artist = {
   id: string;
   name: string;
   popularity: number;
@@ -18,7 +18,7 @@ declare type Artists = {
 
 declare type ArtistsResponse = {
   artists: {
-    items: Artists[];
+    items: Artist[];
     href: string;
     limit: number;
     total: number;
