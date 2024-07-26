@@ -62,7 +62,7 @@ export function LeftSidebar() {
 export const Logo = () => {
   return (
     <Link
-      href="/dashboard"
+      href="/dashboard/your-gigs"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-primary"
     >
       <AudioLines className="size-6 flex-shrink-0" />
@@ -81,7 +81,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
   return (
     <Link
-      href="/dashboard"
+      href="/dashboard/your-gigs"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-primary"
     >
       <AudioLines className="size-6 flex-shrink-0" />

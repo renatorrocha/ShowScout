@@ -8,7 +8,7 @@ export default async function Layout({
 }) {
   const session = await getServerAuthSession();
 
-  if (session) redirect("/dashboard");
+  if (session) redirect("/dashboard/your-gigs");
 
   return children;
 }
