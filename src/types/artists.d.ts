@@ -5,8 +5,7 @@ declare type Artist = {
   uri: string;
   genres: string[];
   href: string;
-  images: [{ url: string; height: number; width: number }];
-
+  images: { url: string; height: number; width: number }[];
   followers: {
     href: string;
     total: number;
@@ -19,9 +18,5 @@ declare type Artist = {
 declare type ArtistsResponse = {
   artists: {
     items: Artist[];
-    href: string;
-    limit: number;
-    total: number;
-    next: string | null;
   };
 };
