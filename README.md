@@ -1,29 +1,98 @@
-# Create T3 App
+# SpotGig
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**SpotGig** is a web application that allows users to log in with their Spotify account and view upcoming shows of their favorite artists. The application leverages the Spotify API to fetch the list of artists the user follows and displays their upcoming concerts.
 
-## What's next? How do I make an app with this?
+## Features
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Spotify Authentication**: Log in with your Spotify account.
+- **Artist Tracking**: View a list of artists you follow on Spotify.
+- **Upcoming Shows**: Get information about upcoming concerts and events for your favorite artists.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Technologies Used
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- **Next.js**: A React framework for server-rendered applications.
+- **TypeScript**: A statically typed superset of JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework.
+- **NextAuth**: Authentication for Next.js.
+- **Spotify API**: Fetches data about the user's followed artists.
+- **TicketMaster API**: Fetches data about the artist's concerts.
+- **Prisma**: An ORM for interacting with the database (used with NextAuth).
 
-## Learn More
+## Getting Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Prerequisites
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- **Node.js**: v14.x or higher
+- **npm**: v6.x or higher (or **yarn**: v1.22.x or higher)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+<!-- ### Installation
 
-## How do I deploy this?
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/spotgig.git
+    cd spotgig
+    ```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+    or
+
+    ```bash
+    yarn install
+    ```
+
+3. **Create an application on Spotify Developer Dashboard**:
+    - Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications)
+    - Create a new application and get your `Client ID` and `Client Secret`
+    - Set the Redirect URI to `http://localhost:3000/api/auth/callback/spotify`
+
+4. **Set up environment variables**:
+    - Create a `.env.local` file in the root directory of your project and add the following environment variables:
+
+    ```env
+    SPOTIFY_CLIENT_ID=your_spotify_client_id
+    SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+    NEXTAUTH_SECRET=your_nextauth_secret
+    ```
+
+5. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+    or
+
+    ```bash
+    yarn dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. -->
+
+## Usage
+
+1. **Sign In**: Click on the "Sign In with Spotify" button to authenticate with your Spotify account.
+2. **View Followed Artists**: Once signed in, you can view a list of artists you follow on Spotify.
+3. **Upcoming Shows**: Check out the upcoming concerts and events for your followed artists.
+
+<!-- ## File Structure -->
+
+<!-- ```plaintext
+spotgig/
+├── components/
+│   ├── AuthBtn.tsx        # Authentication button component
+├── pages/
+│   ├── api/
+│   │   └── auth/
+│   │       └── [...nextauth].ts # NextAuth configuration
+│   └── index.tsx          # Main page
+├── public/
+├── styles/
+│   └── globals.css        # Global styles
+├── .env.local             # Environment variables
+├── next.config.js         # Next.js configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+└── package.json           # Project dependencies and scripts -->
