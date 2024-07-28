@@ -24,7 +24,7 @@ declare type Gig = {
     start: {
       localDate: string;
       localTime: string;
-      dateTime: string;
+      dateTime: Date;
       dateTBD: boolean;
       dateTBA: boolean;
       timeTBA: boolean;
@@ -32,7 +32,7 @@ declare type Gig = {
     };
     timezone: string;
     status: {
-      code: string;
+      code: "offsale" | "onsale";
     };
     spanMultipleDays: boolean;
   };

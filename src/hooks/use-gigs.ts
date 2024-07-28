@@ -14,6 +14,10 @@ const fetchGigs = async (artistName: string) => {
       },
     );
 
+    if (response.data._embedded === undefined) return [];
+
+    console.log(response.data._embedded.events);
+
     return response.data._embedded.events;
   } catch (error: unknown) {
     console.error(`Error fetching Events:`, error);
