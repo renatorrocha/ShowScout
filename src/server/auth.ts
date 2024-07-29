@@ -16,9 +16,7 @@ export type JWTWithAccessToken = JWT & {
   accessTokenExpires: number;
 };
 
-const scopes = ["user-top-read", "user-read-email", "user-follow-read"].join(
-  ",",
-);
+const scopes = ["user-follow-read"].join(",");
 
 const params = {
   scope: scopes,
