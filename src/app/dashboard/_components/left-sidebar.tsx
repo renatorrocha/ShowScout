@@ -20,7 +20,9 @@ export function LeftSidebar() {
     <Sidebar open={open} setOpen={setOpen}>
       <SidebarBody className="justify-between gap-10">
         <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-          {open ? <Logo /> : <LogoIcon />}
+          <div className="flex items-center justify-center">
+            {open ? <Logo /> : <LogoIcon />}
+          </div>
           <div className="mt-8 flex flex-col gap-2">
             {NavbarLinks.map((link, idx) => (
               <SidebarLink
@@ -41,6 +43,7 @@ export function LeftSidebar() {
           link={SpotifyLink}
           className="items-center bg-primary p-2 font-bold text-white"
         />
+
         <UserAvatar session={session} />
       </SidebarBody>
     </Sidebar>
