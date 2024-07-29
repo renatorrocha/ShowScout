@@ -1,4 +1,5 @@
 import { Ticket } from "lucide-react";
+import { RiSpotifyFill } from "react-icons/ri";
 
 export const NavbarLinks = [
   {
@@ -9,3 +10,9 @@ export const NavbarLinks = [
     ),
   },
 ];
+
+export const SpotifyLink = {
+  label: "Spotify",
+  href: "https://open.spotify.com/",
+  icon: <RiSpotifyFill className="size-8 text-white" />,
+};

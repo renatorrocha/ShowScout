@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import UserAvatar from "./user-avatar";
 import { usePathname } from "next/navigation";
 import { cn } from "~/lib/utils";
-import { NavbarLinks } from "~/lib/constants";
+import { NavbarLinks, SpotifyLink } from "~/lib/constants";
 
 export function LeftSidebar() {
   const { data: session } = useSession();
@@ -30,12 +30,17 @@ export function LeftSidebar() {
                   pathname === link.href
                     ? "bg-primary/40"
                     : "hover:bg-primary/20",
+                  "font-semibold text-gray-700",
                 )}
               />
             ))}
           </div>
         </div>
 
+        <SidebarLink
+          link={SpotifyLink}
+          className="items-center bg-primary p-2 font-bold text-white"
+        />
         <UserAvatar session={session} />
       </SidebarBody>
     </Sidebar>
