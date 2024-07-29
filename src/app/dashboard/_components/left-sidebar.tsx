@@ -4,29 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sidebar, SidebarBody, SidebarLink } from "~/components/ui/sidebar";
-import { AudioLines, Ticket, Users } from "lucide-react";
+import { AudioLines } from "lucide-react";
 import { useSession } from "next-auth/react";
 import UserAvatar from "./user-avatar";
 import { usePathname } from "next/navigation";
 import { cn } from "~/lib/utils";
-
-// TODO: remove this in the future
-const LinkAvulso = [
-  {
-    label: "Next Gigs",
-    href: "/dashboard/your-gigs",
-    icon: (
-      <Ticket className="size-5 flex-shrink-0 text-secondary dark:text-primary-dark" />
-    ),
-  },
-  {
-    label: "Followed Artists",
-    href: "/dashboard/followed-artists",
-    icon: (
-      <Users className="size-5 flex-shrink-0 text-secondary dark:text-primary-dark" />
-    ),
-  },
-];
+import { NavbarLinks } from "~/lib/constants";
 
 export function LeftSidebar() {
   const { data: session } = useSession();
@@ -39,7 +22,7 @@ export function LeftSidebar() {
         <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           {open ? <Logo /> : <LogoIcon />}
           <div className="mt-8 flex flex-col gap-2">
-            {LinkAvulso.map((link, idx) => (
+            {NavbarLinks.map((link, idx) => (
               <SidebarLink
                 key={idx}
                 link={link}
