@@ -45,7 +45,7 @@ export function LeftSidebar() {
 export const Logo = () => {
   return (
     <Link
-      href="/dashboard/your-gigs"
+      href="/dashboard/your-shows"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-primary"
     >
       <AudioLines className="size-6 flex-shrink-0" />
@@ -55,7 +55,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="whitespace-pre font-medium text-black dark:text-white"
       >
-        SpotGig
+        ShowScout
       </motion.span>
     </Link>
   );
@@ -64,7 +64,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
   return (
     <Link
-      href="/dashboard/your-gigs"
+      href="/dashboard/your-shows"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-primary"
     >
       <AudioLines className="size-6 flex-shrink-0" />

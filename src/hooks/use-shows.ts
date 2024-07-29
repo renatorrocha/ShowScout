@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { env } from "~/env";
 
-const fetchGigs = async (artistName: string) => {
+const fetchShows = async (artistName: string) => {
   try {
-    const response = await axios.get<GigResponse>(
+    const response = await axios.get<ShowResponse>(
       "https://app.ticketmaster.com/discovery/v2/events.json",
       {
         params: {
@@ -24,10 +24,10 @@ const fetchGigs = async (artistName: string) => {
   }
 };
 
-export const useGigs = (artistName: string) => {
+export const useShows = (artistName: string) => {
   return useQuery({
     queryKey: ["events", artistName],
-    queryFn: () => fetchGigs(artistName),
+    queryFn: () => fetchShows(artistName),
     enabled: !!artistName,
   });
 };

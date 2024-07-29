@@ -1,6 +1,6 @@
-# SpotGig
+# ShowScout
 
-**SpotGig** is a web application that allows users to log in with their Spotify account and view upcoming shows of their favorite artists. The application leverages the Spotify API to fetch the list of artists the user follows and displays their upcoming concerts.
+**ShowScout** is a web application that allows users to log in with their Spotify account and view upcoming shows of their favorite artists. The application leverages the Spotify API to fetch the list of artists the user follows and displays their upcoming concerts.
 
 ## Features
 
@@ -29,8 +29,8 @@
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/spotgig.git
-    cd spotgig
+    git clone https://github.com/yourusername/ShowScout.git
+    cd ShowScout
     ```
 
 2. **Install dependencies**:
@@ -80,7 +80,7 @@
 <!-- ## File Structure -->
 
 <!-- ```plaintext
-spotgig/
+ShowScout/
 ├── components/
 │   ├── AuthBtn.tsx        # Authentication button component
 ├── pages/

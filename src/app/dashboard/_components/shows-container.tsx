@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import StatusBadge from "~/components/status-badge";
 import { Separator } from "~/components/ui/separator";
-import { useGigs } from "~/hooks/use-gigs";
+import { useShows } from "~/hooks/use-shows";
 import { formatDate } from "~/lib/utils";
 
 export default function ShowsContainer() {
   const searchParams = useSearchParams();
   const artistName = searchParams.get("artistName") ?? "";
-  const { data: showsData, isLoading } = useGigs(artistName);
+  const { data: showsData, isLoading } = useShows(artistName);
 
   return (
     <div className="flex size-full items-center justify-center">
@@ -39,7 +39,7 @@ export default function ShowsContainer() {
   );
 }
 
-function ShowComponent({ show }: { show: Gig }) {
+function ShowComponent({ show }: { show: Show }) {
   return (
     <Link
       href={show.url || ""}

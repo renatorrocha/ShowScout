@@ -1,4 +1,4 @@
-declare type Gig = {
+declare type Show = {
   name: string;
   type: string;
   id: string;
@@ -276,8 +276,8 @@ declare type Gig = {
   };
 };
 
-declare type GigResponse = {
+declare type ShowResponse = {
   _embedded: {
-    events: Gig[];
+    events: Show[];
   };
 };

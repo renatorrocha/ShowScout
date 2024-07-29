@@ -32,7 +32,7 @@ export default function Home() {
           className="flex h-fit w-[300px] items-center gap-3 rounded-2xl"
         >
           <RiSpotifyFill className="size-6 md:size-8" />
-          <p className="text-lg font-semibold md:text-3xl">Find Gigs</p>
+          <p className="text-lg font-semibold md:text-3xl">Find Shows</p>
         </AuthBtn>
       </motion.div>
     </AuroraBackground>
