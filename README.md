@@ -16,7 +16,6 @@
 - **NextAuth**: Authentication for Next.js.
 - **Spotify API**: Fetches data about the user's followed artists.
 - **TicketMaster API**: Fetches data about the artist's concerts.
-- **Prisma**: An ORM for interacting with the database (used with NextAuth).
 
 ## Getting Started
 
